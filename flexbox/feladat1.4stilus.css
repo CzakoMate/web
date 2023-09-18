@@ -1,0 +1,25 @@
+#fodiv{
+    width:600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+#zold{
+    background-color: green;
+    
+    order: 0;
+    flex-grow: 1;
+
+}
+#sarga{
+    background-color:yellow;
+    
+    order:2;
+    flex-grow: 2;
+}
+#lila{
+    background-color: purple;
+    
+    order: 1;
+    flex-grow: 1;
+}
