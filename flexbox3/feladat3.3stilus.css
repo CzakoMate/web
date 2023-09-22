@@ -1,0 +1,55 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #ffe4c4;
+}
+#nagyKocka{
+    display: flex;
+    width: 40vw;
+    height: 40vw;
+    flex-wrap: wrap;
+}
+#aqua{
+    height: 12.5%;
+    width: 100%;
+    background-color: aqua;
+    flex-grow: 8;
+}
+#oszlopok{
+    height:75%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+#narancs{
+    background-color: #ffa500;
+    flex-grow: 1;
+}
+#atlatszo{
+background-color: transparent;
+flex-grow: 0.5;
+}
+#piros{
+    background-color: red;
+    flex-grow: 5;
+}
+#lila{
+    background-color: purple;
+    flex-grow: 1;
+}
+
+#kek{
+    flex-grow: 8;
+    height: 12.5%;
+    width:100%;
+    background-color: blue;
+}
+#kisKocka{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    float:right;
+    margin-right: 111px;
+}
