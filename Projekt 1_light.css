@@ -1,0 +1,296 @@
+body{
+    background-image: url("hatter.png");
+    color:#69491A;
+}
+
+.termeszet{
+    background-color: #a7c01c !important;
+}
+.pihenes{
+    background-color: #17c7a1 !important;
+}
+@media screen and (min-width: 1250px) {
+    button{
+        padding: 10px;
+        text-align: center;
+        color:black;
+        background-color: white;
+        border:black solid 2px;
+    }
+    button:hover{
+        padding: 10px;
+        text-align: center;
+        color:white;
+        background-color: black;
+        border:white solid 2px;
+        cursor:pointer;
+    }
+    #atlatszo{
+        width:90vw;
+        height:fit-content;
+        background-color:rgba(228, 182, 96,0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #cim{
+        width: 85%;
+        height:fit-content;
+        flex-grow: 5;
+        background-color: #FFD954;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 100px;
+    }
+    #hetkoznap{
+        flex-grow: 5;
+        height:fit-content;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        column-count: 5;
+    }
+    #munkanap{
+        width:17%;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: center;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        
+    }
+    #ora{
+        width:150px;
+        height:50px;
+        background-color: #F2AB39;
+        margin:20px;
+        padding: 5px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .nap{
+        font-size: 25px;
+        border:#69491A solid 3px;
+    }
+    #hetvege{
+        width:100%;
+        height:fit-content;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+    }
+    
+    #szabadnap{
+        width:30%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    #fel1{
+        flex-grow: 1;
+        width: 50%;
+
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width:1249px) {
+    button{
+        padding: 10px;
+        text-align: center;
+        color:black;
+        background-color: white;
+        border:black solid 2px;
+    }
+    button:hover{
+        padding: 10px;
+        text-align: center;
+        color:white;
+        background-color: black;
+        border:white solid 2px;
+        cursor:pointer;
+    }
+    #atlatszo{
+        width:90vw;
+        height:fit-content;
+        background-color:rgba(228, 182, 96,0.5);
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #cim{
+        width: 85%;
+        height:fit-content;
+        background-color: #FFD954;
+        flex-grow: 5;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top:50px;
+        font-size: 75px;
+    }
+    #hetkoznap{
+        flex-grow: 5;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        column-count: 3;
+    }
+    #munkanap{
+        flex-grow: 2;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: center;
+        align-self: flex-start;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        
+    }
+    #ora{
+        width:150px;
+        height:50px;
+        background-color: #F2AB39;
+        margin:20px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .nap{
+        font-size: 25px;
+        border:#69491A solid 2px;
+    }
+    #hetvege{
+        flex-grow: 2;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        margin-top: 50px;
+    }
+    #szabadnap{
+        flex-grow: 1;
+        height: fit-content;
+        justify-content: center;
+        align-self: flex-start;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+}
+@media screen and (max-width: 699px) {
+    button{
+        padding: 10px;
+        text-align: center;
+        color:black;
+        background-color: white;
+        border:black solid 2px;
+    }
+    button:hover{
+        padding: 10px;
+        text-align: center;
+        color:white;
+        background-color: black;
+        border:white solid 2px;
+        cursor:pointer;
+    }
+    #atlatszo{
+        width:90vw;
+        height:fit-content;
+        background-color:rgba(228, 182, 96,0.5);
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+    }
+    #cim{
+        width: 85%;
+        height:fit-content;
+        flex-grow: 1;
+        background-color: #FFD954;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top:50px;
+        font-size: 35px;
+    }
+    #hetkoznap{
+        flex-grow: 1;
+        display: flex;
+        flex-direction:column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+    }
+    #munkanap{
+        flex-grow: 1;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    #ora{
+        width:150px;
+        height:50px;
+        background-color: #F2AB39;
+        margin:20px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .nap{
+        font-size: 25px;
+        border:#69491A solid 2px;
+    }
+    #hetvege{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        margin-top: 50px;
+    }
+    #szabadnap{
+        flex-grow: 1;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .oszlopilleszt{
+        display: none !important;
+    }
+    
+}

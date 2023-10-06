@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link id="theme" rel="stylesheet" type="text/css" href="Projekt 1_light.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt 1</title>
+    <script>
+        function toggleTheme() {
+            
+            var theme = document.getElementsByTagName('link')[0];
+            if (theme.getAttribute('href') == 'Projekt 1_light.css') {
+                theme.setAttribute('href', 'Projekt 1_dark.css');
+            } else {
+                theme.setAttribute('href', 'Projekt 1_light.css');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="atlatszo">
+        <div style="position: fixed;float:right;"><button onclick="toggleTheme()">Téma váltás</button> </div>
+        <div id="cim">Szabadidős programok</div>
+        <div id="hetkoznap">
+            <div id="munkanap">
+                <div id="ora" class="nap">Hétfő</div>
+                <div id="ora" class="termeszet">7:00 Arborétum körbejárás</div>
+                <div id="ora" class="termeszet">11:00 Lombkoronasétány körbejárás</div>
+                <div id="ora">12:30 Kastély tárlatvezetés</div>
+                <div id="ora" class="termeszet">16:00 Erdei séta</div>
+                <div id="ora" class="termeszet">18:00 Kilátó látogatás</div>
+                <div id="ora"class="termeszet">20:00 Esti túra a hegyekben</div>
+            </div>
+            <div id="munkanap">
+                <div id="ora" class="nap">Kedd</div>
+                <div id="ora" class="termeszet">6:00 Tó körüli séta</div>
+                <div id="ora">11:00 Bobozás</div>
+                <div id="ora">12:30 Állatsimogató látogatás</div>
+                <div id="ora">16:00 Történelmi emlékpark körbejárás</div>
+                <div id="ora">20:00 Galéria körbezetés</div>
+            </div>
+            <div id="munkanap">
+                <div id="ora" class="nap">Szerda</div>
+                <div id="ora" class="pihenes">8:00 Wellness masszázs</div>
+                <div id="ora" class="pihenes">10:30 Szauna</div>
+                <div id="ora">11:30 Úszóverseny</div>
+                <div id="ora">16:00 Eredményhirdetés</div>
+                <div id="ora" class="pihenes">18:00 Relaxáció</div>
+                <div id="ora" class="pihenes">20:00 Yoga</div>
+            </div>
+            <div id="munkanap">
+                <div id="ora" class="nap">Csütörtök</div>
+                <div id="ora" class="termeszet">6:00 Tó körüli séta</div>
+                <div id="ora" class="termeszet">11:00 Arborétum körbejárás</div>
+                <div id="ora" class="termeszet">15:00 Lombkoronasétány körbejárás</div>
+                <div id="ora" class="termeszet">16:30 Erdei séta</div>
+                <div id="ora" class="termeszet">18:30 Kilátó túra</div>
+                <div id="ora" class="termeszet">20:00 Esti túra a hegyekben</div>
+            </div>
+            <div id="munkanap">
+                <div id="ora" class="nap">Péntek</div>
+                <div id="ora">9:00 Bobozás</div>
+                <div id="ora">10:30 Kastély tárlatvezetés</div>
+                <div id="ora" class="pihenes">14:00 Wellness masszázs</div>
+                <div id="ora" class="pihenes">16:30 Szauna</div>
+                <div id="ora" class="pihenes">17:30 Relaxáció</div>
+                <div id="ora" class="pihenes">19:30 Yoga</div>
+                <div id="ora" class="pihenes">21:30 Éjszakai fürdö</div>
+            </div>
+        </div>
+        <div id="hetvege">
+            <div id="szabadnap">
+                <div id="fel1">
+                <div id="ora" class="nap">Szombat</div>
+                <div id="ora">7:00 Reggeli torna</div>
+                <div id="ora" class="pihenes">8:00 Szauna</div>
+                <div id="ora" class="pihenes">9:00 Wellness masszázs</div>
+                <div id="ora" class="pihenes">11:30 Relaxáció</div>
+                <div id="ora" class="pihenes">13:30 Yoga</div>
+                </div>
+                <div id="fel1">
+                <div id="ora" style="display: none;"></div>  
+                <div id="ora">15:30 Délutáni torna</div>
+                <div id="ora">16:30 Svédasztal</div>
+                <div id="ora">18:00 Tombola</div>
+                <div id="ora" class="pihenes">20:30 Meditáció</div>
+                </div>
+            </div>
+            <div id="szabadnap">
+                <div id="fel1">
+                <div id="ora" class="nap">Vasárnap</div>
+                <div id="ora" class="termeszet">6:00 Tó Körüli séta</div>
+                <div id="ora">10:00 Város körbejárása</div>
+                <div id="ora" class="termeszet">16:00 Lombkoronasétány körbejárása</div>
+                </div>
+                <div id="fel1">
+                <div id="ora" style="background-color: rgba(0, 0, 0, 0);"class="oszlopilleszt" ></div> 
+                <div id="ora">17:00 Kalandpark</div>
+                <div id="ora" class="termeszet">19:00 Kilátó látogatás</div>
+                <div id="ora" class="termeszet">21:00 Esti túra a hegyekben</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
