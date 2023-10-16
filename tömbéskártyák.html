@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömb és kártyák</title>
+    <style>
+        body{
+            background-color: gold;
+        }
+        button{
+            padding: 7px;
+            background-color: orange;
+            border:1px white solid;
+        }
+        button:hover{
+            background-color: white;
+            color:orange;
+            border: 1px orange solid;
+            cursor: pointer;
+        }
+        #kimenet{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .item{
+            height:100px;
+            width:300px;
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+    </style>
+    <script>
+        let x=[];
+        
+        function Bevitel()
+        {
+            let bemenet=document.getElementById("bemenet").value;
+            if(bemenet!=='')
+            {
+                x=bemenet.split(',');
+                return(Kiiratas());
+                
+            }
+            console.log(x);
+        }
+        function clearInput(target){
+        if (target.value!=""){
+            target.value= "";
+       }
+    }
+        function Kiiratas()
+        {
+            let tartalom="";
+            for(let i=1;i<x.length;i++)
+            {
+                    tartalom+=`<div class="item">`.concat(x.slice(i-1,i)).concat(`</div>`);
+                
+            }
+            console.log(tartalom);
+            document.getElementById("kimenet").innerHTML=tartalom;
+        }
+    </script>
+</head>
+<body>
+    <label for="bemenet">Adjon meg adatokat vesszővel elválasztva(Az utólsó után is tegyen!): </label>
+    <input type="text" id="bemenet" value= "" onfocus= "clearInput(this)">
+    <button onclick="Bevitel()">Bevitel</button>
+    <div id="kimenet">
+        
+    </div>
+</body>
+</html>
