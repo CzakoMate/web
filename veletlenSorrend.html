@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veletlensorrend</title>
+</head>
+<script>
+    function legyenVeletlenSorrend()
+    {
+        let tomb=[ "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"];
+        let ujtomb=[];
+        let Iszam=tomb.length;
+        let UjIndex=0;
+        let Rszam=Math.floor(Math.random() * Iszam);
+        do{
+            Iszam=tomb.length;
+            Rszam=Math.floor(Math.random() * Iszam);
+            console.log(Rszam);
+            ujtomb.push(tomb[Rszam]);
+            tomb.splice(Rszam, 1);
+        }while(Iszam!=0);
+        document.getElementById("ki").innerHTML=ujtomb;
+    }
+</script>
+<body>
+    <button onclick="legyenVeletlenSorrend()">Gomb</button>
+    <div id="ki"></div>
+</body>
+</html>
