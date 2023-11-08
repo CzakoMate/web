@@ -18,7 +18,18 @@
                 Tomb[i][j] = szam++;
             }
         } console.log(Tomb);
-        
+        let ujTomb=new Array(3)
+        for(let i=0;i<3;i++)
+        {
+            ujTomb[i]=[];
+            let Rszam=Math.floor((Math.random() * ujTomb.length) + 1);
+            for(let j=0;j<3;j++)
+            {
+                let Rszam2=Math.floor((Math.random() * ujTomb.length) + 1);
+                ujTomb[i][j]=Tomb[Rszam][Rszam2]
+            }
+        }
+        console.log(ujTomb);
         
         
     }
