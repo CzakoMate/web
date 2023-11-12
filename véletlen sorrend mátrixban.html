@@ -5,37 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Véletlen sorrend mátrixban</title>
+    <style>
+        button{
+            display: block;
+            background-color: greenyellow;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 10px 12px;
+            border: 2px black solid;
+        }
+        button:hover{
+            display: block;
+            background-color: black;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 10px 12px;
+            border: 2px greenyellow solid;
+            color:greenyellow;
+            cursor: pointer;
+        }
+        #KI{
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 1200px;
+            flex-grow: 3;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: lightslategrey;
+        }
+        #sor
+        {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1200px;
+            height: 200px;
+            flex-grow: 3;
+        }
+        #forma{
+            background-color: greenyellow;
+            height:190px;
+            flex-grow: 1;
+            width: 300px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 120px;
+            
+        }
+    </style>
     <script>
     function Veletlen(){
-        let Tomb = new Array(3);
-        for (let i = 0; i < Tomb.length; i++) {
-        Tomb[i] = [];
+        let Tomb = [[1,2,3],[4,5,6],[7,8,9]];
+        console.log(Tomb[0][1])
+        let ki="";
+    var nums = [1,2,3,4,5,6,7,8,9],
+    ranNums = [],
+    i = nums.length,
+    j = 0;
+while (i--) {
+    j = Math.floor(Math.random() * (i+1));
+    ranNums.push(nums[j]);
+    nums.splice(j,1);
+}
+console.log(ranNums);
+let szamlal=0;
+let tempTomb = new Array(9);
+for(let i=0;i<9;i++)
+{
+        switch(ranNums[szamlal])
+        {
+            case 1:tempTomb[i]=[0,0];break;
+            case 2:tempTomb[i]=[0,1];break;
+            case 3:tempTomb[i]=[0,2];break;
+            case 4:tempTomb[i]=[1,0];break;
+            case 5:tempTomb[i]=[1,1];break;
+            case 6:tempTomb[i]=[1,2];break;
+            case 7:tempTomb[i]=[2,0];break;
+            case 8:tempTomb[i]=[2,1];break;
+            case 9:tempTomb[i]=[2,2];break;
         }
-        let szam = 1;
+            szamlal=szamlal+1;
+}
+console.log(tempTomb);
+
+        let szamlalo=0;
+        let ujTomb = new Array(3);
+        for (let i = 0; i < ujTomb.length; i++) {
+        ujTomb[i] = [];
+        }
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
- 
-                Tomb[i][j] = szam++;
-            }
-        } console.log(Tomb);
-        let ujTomb=new Array(3)
-        for(let i=0;i<3;i++)
-        {
-            ujTomb[i]=[];
-            let Rszam=Math.floor((Math.random() * ujTomb.length) + 1);
-            for(let j=0;j<3;j++)
-            {
-                let Rszam2=Math.floor((Math.random() * ujTomb.length) + 1);
-                ujTomb[i][j]=Tomb[Rszam][Rszam2]
+                ujTomb[i][j] = Tomb[tempTomb[szamlalo][0]][tempTomb[szamlalo][1]];
+                szamlalo+=1;
             }
         }
+    document.getElementById("KI").style="height: 800px;";
         console.log(ujTomb);
+    for(let i=0;i<ujTomb.length;i++)
+    {
+    	ki+="<div id='sor'>"
+        for(let j=0;j<ujTomb[i].length;j++)
+        {
+        ki+="<div id='forma'>"+ujTomb[i][j]+"\t"+"</div>";
+        }
+        ki+="</div>"
+    }
+    document.getElementById("KI").innerHTML=ki;
         
         
+    }
+    function Torol(){
+        document.getElementById("KI").style="display:none"
+        document.getElementById("sor").style="display:none";
+        document.getElementById("forma").style="height:none;";
     }
     </script>
 </head>
 <body>
-    <button onclick="Veletlen()">Véletlen sorrend</button>
+    
+    <div id="KI"></div>
+    <div><button onclick="Veletlen()">Véletlen sorrend</button></div>
+    <div><button onclick="Torol()">Törlés</button></div>
 </body>
 </html>
