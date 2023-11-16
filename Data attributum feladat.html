@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data attributum feladat</title>
+    <style>
+        #fodiv{
+            display: flex;
+            width:600px;
+            flex-grow: 2;
+            padding: 30px;
+            height:600px;
+            flex-wrap: wrap;
+            background-color:darkslategray;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #sor0{
+            flex-grow: 1;
+            width:250px;
+            height: 45%;
+            background-color: yellow;
+            margin-right: 30px;
+        }
+        #sor1{
+            flex-grow: 1;
+            width:250px;
+            height: 45%;
+            background-color: yellow;
+            margin-right: 30px;
+        }
+        #sor2{
+            flex-grow: 1;
+            width:250px;
+            height: 45%;
+            background-color: yellow;
+            margin-right: 30px;
+        }
+        #sor3{
+            flex-grow: 1;
+            width:250px;
+            height: 45%;
+            background-color: yellow;
+            margin-right: 30px;
+        }
+    </style>
+    <script>
+        let matrix=[[2],[2]];
+        window.onload=function Matrix(){
+            
+            
+            for(let i=0;i<matrix.length;i++)
+            {
+                for(let j=0;j<matrix.length;j++)
+                {
+                    matrix[i][j]="";
+                }
+                
+            }
+            let KI="";
+            let szamlalo=0;
+            for(let i=0;i<matrix.length;i++)
+            {
+                for(let j=0;j<matrix.length;j++)
+                {
+                    KI+="<div id='sor"+szamlalo+"' onclick='Szinez"+szamlalo+"()' data-piros='0' data-kek='0' data-index='"+szamlalo+"'>"+matrix[i][j]+"</div>";
+                    console.log(szamlalo);
+                    szamlalo+=1;
+                }
+            }
+            document.getElementById("fodiv").innerHTML=KI;
+        }
+        function Szinez1(){
+            let data=document.getElementById("sor1");
+            if(data.dataset.piros=="1")
+            {
+                document.getElementById("sor1").style="Background-color:blue;"
+                data.dataset.piros="0";
+                data.dataset.kek="1";
+            }
+            if(data.dataset.piros=="0"&data.dataset.kek=="0")
+            {
+                document.getElementById("sor1").style="Background-color:red;"
+                data.dataset.piros="1";
+            }
+            data.dataset.kek="0"; 
+        }
+        function Szinez2()
+        {
+            let data2=document.getElementById("sor2");
+            if(data2.dataset.piros=="1")
+            {
+                document.getElementById("sor2").style="Background-color:blue;"
+                data2.dataset.piros="0";
+                data2.dataset.kek="1";
+            }
+            if(data2.dataset.piros=="0"&data2.dataset.kek=="0")
+            {
+                document.getElementById("sor2").style="Background-color:red;"
+                data2.dataset.piros="1";
+            }   
+            data2.dataset.kek="0";
+        }
+        function Szinez3()
+        {
+            
+            let data3=document.getElementById("sor3");
+            if(data3.dataset.piros=="1")
+            {
+                document.getElementById("sor3").style="Background-color:blue;"
+                data3.dataset.piros="0";
+                data3.dataset.kek="1";
+                
+            }
+            if(data3.dataset.piros=="0"&data3.dataset.kek=="0")
+            {
+                document.getElementById("sor3").style="Background-color:red;"
+                data3.dataset.piros="1";
+            }
+            data3.dataset.kek="0"; 
+        }
+        function Szinez0()
+        {
+            let data0=document.getElementById("sor0");
+            if(data0.dataset.piros=="1")
+            {
+                document.getElementById("sor0").style="Background-color:blue;"
+                data0.dataset.piros="0";
+                data0.dataset.kek="1";
+            }
+            if(data0.dataset.piros=="0"&data0.dataset.kek=="0")
+            {
+                document.getElementById("sor0").style="Background-color:red;"
+                data0.dataset.piros="1";
+            }   
+            data0.dataset.kek="0"; 
+        }
+    </script>
+</head>
+<body>
+    <div id="fodiv"></div>
+</body>
+</html>
