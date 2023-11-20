@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.feladat</title>
+    <script>
+        function Futtat(){
+            let obj={}
+            function IsEmpthy(obj)
+            {
+                if(Object.keys(obj).length==0)
+                {
+                    return true;
+                }
+                else{
+                    return false
+                }
+            }
+            let myobj={name:"hua"}
+            console.log(IsEmpthy(obj))
+            console.log(IsEmpthy(myobj))
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Futtat()">Futtat</button>
+</body>
+</html>
