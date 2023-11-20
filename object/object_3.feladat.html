@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.feladat</title>
+    <script>
+        function Futatt(){
+            let fizetes = {
+            Anna : 2100,
+            Cecil : 1890,
+            Emil : 2050,
+            Gerald : 2920
+            }
+            let osszeg=0;
+            let ki="";
+            for(let i in fizetes)
+            {
+                console.log(i+": "+fizetes[i]+" Ft")
+                ki+=i+": "+fizetes[i]+" Ft"+"<br>";
+            }
+            for (let i in fizetes) {
+             osszeg += fizetes[i];
+            }
+            console.log("Az összesített fizetésük: "+osszeg+" Ft");
+            ki+="Az összesített fizetésük: "+osszeg+" Ft";
+            document.getElementById("ki").innerHTML=ki;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Futatt()">Futtat</button>
+    <div id="ki"></div>
+</body>
+</html>
