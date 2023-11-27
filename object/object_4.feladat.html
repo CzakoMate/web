@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. feladat</title>
+</head>
+<style>
+    body{
+        background-image: url(https://th.bing.com/th?id=OIF.lH5NStJJS3vDvz3VkV%2b4rQ&rs=1&pid=ImgDetMain);
+    }
+    img{
+        width: 250px;
+    }
+    #ki{
+        display: flex;
+        height: fit-content;
+        width: 90%;
+        flex-wrap: wrap;
+        flex-grow: 3;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-evenly;
+    }
+    #sor{
+        background-color: grey;
+            height:400px;
+            flex:0 0 300px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+    }
+    button{
+            display: block;
+            background-color: grey;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 10px 12px;
+            border: 2px black solid;
+        }
+        button:hover{
+            display: block;
+            background-color: black;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 10px 12px;
+            border: 2px grey solid;
+            color:grey;
+            cursor: pointer;}
+</style>
+<script>
+let heroes = [
+{firstName: "Ahsoka", lastName: "Tano", job: "padawan",img:"https://www.starwarsnewsnet.com/wp-content/uploads/2020/11/ahsoka1.jpg"},
+{firstName: "Boba", lastName: "Fett", job: "fejvadász",img:"https://th.bing.com/th/id/OIP.g1rDSV-GfJC41IEVXqa5zQHaE8?rs=1&pid=ImgDetMain"},
+{firstName: "Han", lastName: "Solo", job: "csempész",img:"https://th.bing.com/th/id/OIP.jDOgHMONhil3917iLZy9LAHaEo?rs=1&pid=ImgDetMain"},
+{firstName: "Leia", lastName: "Organa", job: "szenátor",img:"https://th.bing.com/th/id/R.e7970e7a8c758de735abbf302280e75c?rik=krndnqEalP7Sxw&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f8400000%2fleia-princess-leia-organa-solo-skywalker-8412455-1024-768.jpg&ehk=P5y%2fwB12Hu44Q0EOcnlctUDRgfnVdrmT1EEFPisBsA0%3d&risl=&pid=ImgRaw&r=0"} ]
+let ki=""
+function Futatt(){
+    ki="";
+for(let i=0;i<heroes.length;i++)
+{       
+
+        ki+=`<div id="sor"><figure><img src="${heroes[i].img}">
+            <figcaption>${heroes[i].firstName} ${heroes[i].lastName} ${heroes[i].job}<figcaption></figure></div>`;
+}
+document.getElementById("ki").innerHTML=ki;
+}
+function HozzaAd(){
+    let igaz=true;
+    if(heroes.indexOf({firstName:"Din",lastName:"Djarin",job:"fejvadász",img:"https://th.bing.com/th/id/R.07ca8177903ef1fa51dc3cbf01870f73?rik=PpZfMppGtnMlDQ&pid=ImgRaw&r=0"},5)&&heroes.length>4)
+    {
+        let igaz=false;
+    } 
+    else{
+        if(igaz==true)
+        {
+        heroes.push({firstName:"Darth",lastName:"Vader",job:"sith nagyúr",img:"https://th.bing.com/th/id/R.ed7e0f83265981f5757e7846a30d80b7?rik=PK4akbFykO5ppw&riu=http%3a%2f%2fwallpapersdsc.net%2fwp-content%2fuploads%2f2016%2f01%2fDarth-Vader-Images.jpg&ehk=2AloIM1MP%2fOjCo5bMvfZKFcBFduXyLnhwBcfRTO4YdQ%3d&risl=&pid=ImgRaw&r=0"},)
+        heroes.push({firstName:"Din",lastName:"Djarin",job:"fejvadász",img:"https://th.bing.com/th/id/R.07ca8177903ef1fa51dc3cbf01870f73?rik=PpZfMppGtnMlDQ&pid=ImgRaw&r=0"})
+        }
+    }
+    ki="";
+        for(let i=0;i<heroes.length;i++)
+        {       
+        
+        ki+=`<div id="sor"><figure><img src="${heroes[i].img}">
+            <figcaption>${heroes[i].firstName} ${heroes[i].lastName} ${heroes[i].job}<figcaption></figure></div>`;
+        }
+
+document.getElementById("ki").innerHTML=ki;
+}
+</script>
+<body>
+    <button onclick="Futatt()">Kiiratás</button>
+    <div id="ki"></div>
+    <button onclick="HozzaAd()">Hozzáadás</button>
+</body>
+</html>
