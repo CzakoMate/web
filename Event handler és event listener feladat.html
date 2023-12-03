@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handler és event listener feladat</title>
+</head>
+<body>
+    <label for="tartalom">Adjon meg szöveget:</label><br>
+    <input type="text" id="tartalom"><br>
+    <input type="submit" value="Elküldés" onclick="Ellenorzes()"><br>
+    <button id="btn">Konzolra írás</button>
+
+    <script>
+        let tartalom;
+        let elkuldve="false";
+        function Ellenorzes(){
+            elkuldve="true";
+            tartalom=document.getElementById('tartalom').value;
+        }
+        const button=document.getElementById("btn");
+        button.addEventListener("click", function() {if(elkuldve=="true"){console.log(tartalom)}});
+        button.onclick = () => {if(elkuldve==true){console.log(tartalom)}};
+        
+    </script>
+
+</body>
+</html>
