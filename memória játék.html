@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memória játék</title>
+        <style>
+        body {
+            background-color: darkgreen;
+            text-align: center;
+            color: white;
+        }
+        #tabla {
+            height: 43vw;
+            width: 43vw;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: darkolivegreen;
+            border: 10px solid slategray;
+        }
+        @media screen and (min-width:1095px) {
+        .kartya {
+            flex-grow: 1;
+            height: 10.3vw;
+            margin: 2.5px;
+        }
+        }
+        @media  screen and (min-width:680px) and (max-width:1094px) {
+            .kartya {
+                flex-grow: 1;
+                height: 10vw;
+                margin: 2.5px;
+            }  
+        }
+        @media  screen and (max-width:679px)
+        {
+            .kartya {
+                flex-grow: 1;
+                height: 9vw;
+                margin: 2.5px;
+            }  
+        }
+        </style>
+
+        <script>
+        var hibak = 0;
+            var eltalalt=0;
+            var kartyaLista = [
+                "BMP 2 691x691px",
+                "challenger 2 1274x1274px",
+                "k2 black panther 1440x1440px",
+                "Leclerc 720x720px",
+                "Leopard 2 2pl 444x444px",
+                "Lynx 1080x1080px",
+                "merkava mk4 444x444px",
+                "Strv122 1225x1225px",
+            ]
+            
+            
+            var kartyaPakli;
+            var tabla = [];
+            var sorok = 4;
+            var oszlopok =4;
+            
+            var kartya1Kivalsztott;
+            var kartya2Kivalasztott;
+            
+            window.onload = function() {
+                kartyaKeveres();
+                JatekIndit();
+            }
+            
+            function kartyaKeveres() {
+                kartyaPakli = kartyaLista.concat(kartyaLista);
+                console.log(kartyaPakli);
+                for (let i = 0; i < kartyaPakli.length; i++) {
+                    let j = Math.floor(Math.random() * kartyaPakli.length);
+                    let idVal = kartyaPakli[i];
+                    kartyaPakli[i] = kartyaPakli[j];
+                    kartyaPakli[j] = idVal;
+                }
+                console.log(kartyaPakli);
+            }
+            
+            function JatekIndit() {
+                for (let s = 0; s < sorok; s++) {
+                    let row = [];
+                    for (let o = 0; o < oszlopok; o++) {
+                        let kartyaKep = kartyaPakli.pop();
+                        row.push(kartyaKep);
+                        let kartya = document.createElement("img");
+                        kartya.id = s.toString() + "-" + o.toString();
+                        kartya.src = kartyaKep + ".jpg";
+                        kartya.classList.add("kartya");
+                        kartya.addEventListener("click", KartyaValaszt);
+                        document.getElementById("tabla").append(kartya);
+            
+                    }
+                    tabla.push(row);
+                }
+            
+                console.log(tabla);
+                setTimeout(kartyaElrejt, 1000);
+            }
+            
+            function kartyaElrejt() {
+                for (let s = 0; s < sorok; s++) {
+                    for (let o = 0; o < oszlopok; o++) {
+                        let kartya = document.getElementById(s.toString() + "-" + o.toString());
+                        kartya.src = "kartya hatlapja.png";
+                    }
+                }
+            }
+            
+            function KartyaValaszt() {
+            
+                if (this.src.includes("hatlap")) {
+                    if (!kartya1Kivalsztott) {
+                        kartya1Kivalsztott = this;
+            
+                        let kordinatak = kartya1Kivalsztott.id.split("-");
+                        let s = parseInt(kordinatak[0]);
+                        let o = parseInt(kordinatak[1]);
+            
+                        kartya1Kivalsztott.src = tabla[s][o] + ".jpg";
+                    }
+                    else if (!kartya2Kivalasztott && this != kartya1Kivalsztott) {
+                        kartya2Kivalasztott = this;
+            
+                        let kordinatak = kartya2Kivalasztott.id.split("-");
+                        let s = parseInt(kordinatak[0]);
+                        let o = parseInt(kordinatak[1]);
+            
+                        kartya2Kivalasztott.src = tabla[s][o] + ".jpg";
+                        setTimeout(frissit, 1000);
+                    }
+                }
+            
+            }
+            
+            function frissit() {
+                if (kartya1Kivalsztott.src != kartya2Kivalasztott.src) {
+                    kartya1Kivalsztott.src = "kartya hatlapja.png";
+                    kartya2Kivalasztott.src = "kartya hatlapja.png";
+                    hibak += 1;
+                    document.getElementById("hibak").innerText = hibak;
+                }
+                else{
+                    eltalalt++;
+                    kartya1Kivalsztott.style="opacity: 0;"
+                    kartya2Kivalasztott.style="opacity: 0;"
+                    setTimeout(Vege,100);
+                }
+            
+                kartya1Kivalsztott = null;
+                kartya2Kivalasztott = null;
+            }
+            function Vege(){
+                if(eltalalt==8)
+                {
+                    alert("Gratulálok!");
+                    setTimeout(window.location.reload(),5000);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Hibák: <span id="hibak">0</span></h2>
+        <div id="tabla">
+        </div>
+    </body>
+</html>
