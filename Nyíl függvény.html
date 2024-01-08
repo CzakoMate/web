@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyíl függvény</title>
+    <script>
+        const Fordit=()=>{
+            let szoveg=document.getElementById("be").value;
+            let ki="";
+            ki=szoveg.split("").reverse().join("");
+            document.getElementById("ki").innerHTML=ki;
+        }
+    </script>
+</head>
+<body>
+    <h2>Adott érték megfordítása</h2>
+    <label for="be">Adjon meg szöveget</label>
+    <input type="text" id="be"><br>
+    <button onclick="Fordit()">Megfordít</button><br>
+    A szöveg fordítva:<br>
+    <div id="ki"></div>
+</body>
+</html>
