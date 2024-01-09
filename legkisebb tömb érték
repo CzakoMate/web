@@ -1,0 +1,28 @@
+function min(arr, toReturn) {
+  // TODO
+  let minimum=10000000000;
+  let minindex=0;
+  if(toReturn=='value')
+    {
+      for(let i=0;i<arr.length;i++)
+        {
+          if(arr[i]<minimum)
+            {
+              minimum=arr[i];
+            }
+        }
+      return minimum;
+    }
+  if(toReturn=='index')
+    {
+      let minimum2=10000000000;
+      for(let i=0;i<arr.length;i++)
+        {
+          if(arr[i]<minimum2)
+            {
+              minindex=i;
+            }
+        }
+      return minindex;
+    }
+}
