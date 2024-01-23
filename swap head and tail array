@@ -1,0 +1,36 @@
+function swapHeadAndTail(arr) {
+  // good luck
+  let newarr=[];
+  let temparr=[];
+  if(arr.length%2==0 && arr.length!=0)
+    {
+      for(let i=0;i<(arr.length/2);i++)
+        {
+          temparr[i]=arr[i];
+        }
+      for(let i=(arr.length/2);i<arr.length;i++)
+        {
+          for(let j=0;j<temparr.length;j++)
+            {
+          temparr[j]=newarr[i];
+              }
+        }
+      temparr=[];
+      for(let i=(arr.length/2);i<arr.length;i++)
+        {
+          temparr[i]=arr[i];
+        }
+      for(let j=0;j<temparr.length;j++)
+        {
+          newarr[j]=temparr[j]
+        }
+      return newarr;
+    }
+  else if(arr.length%2==1)
+    {
+      let middle=(arr.legnth-1)/2+1;
+      let middleval=arr[middle];
+      arr.splice(middleval,1);
+      
+    }
+}
