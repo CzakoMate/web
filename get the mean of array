@@ -1,0 +1,10 @@
+function getAverage(marks){
+  //TODO : calculate the downward rounded average of the marks array
+  let atlag=0
+  for(let i=0;i<marks.length;i++)
+    {
+      atlag+=marks[i];
+    }
+  atlag/=marks.length;
+  return Math.round(atlag)
+}
