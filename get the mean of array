@@ -6,5 +6,5 @@ function getAverage(marks){
       atlag+=marks[i];
     }
   atlag/=marks.length;
-  return Math.round(atlag)
+  return Math.floor(atlag)
 }
