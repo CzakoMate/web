@@ -1,0 +1,27 @@
+function meanVsMedian(numbers) {
+  let avg=0;
+  for(let i=0;i<numbers.length;i++)
+    {
+      avg+=numbers[i];
+    }
+  avg/=numbers.length;
+  let median=0;
+  
+  numbers.sort(function(a, b) {
+        return a - b;
+    });
+
+    let index = Math.floor((numbers.length - 1) / 2);
+  median=numbers[index];
+  if(median>avg)
+    {
+      return 'median';
+    }
+  else if(median<avg)
+    {
+      return 'mean'
+    }
+  else{
+    return 'same'
+  }
+}
