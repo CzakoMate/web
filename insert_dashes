@@ -1,0 +1,13 @@
+function insertDash(num) {
+   let numStr=num.toString();
+  let ered="";
+  for (let i = 1; i < numStr.length; i++) {
+        if (Number(numStr[i - 1]) % 2 === 1 && Number(numStr[i]) % 2 === 1) {
+            ered += numStr[i - 1] + '-';
+        } else {
+            ered += numStr[i - 1];
+        }
+    }
+    ered += numStr[numStr.length - 1];
+  return ered;
+}
