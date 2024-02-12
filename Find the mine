@@ -1,0 +1,18 @@
+function mineLocation(field){
+  let coords=[];
+  for(let i=0;i<field.length;i++)
+    {
+      const area=field[i];
+      for(let j=0;j<area.length;j++)
+        {
+          if(field[i][j]===1)
+            {
+              coords.push(i);
+              coords.push(j);
+              break;
+            }
+        }
+      
+    }
+  return coords;
+}
