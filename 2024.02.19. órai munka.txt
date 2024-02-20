@@ -1,0 +1,10 @@
+1. feladat
+ha a `https://via.assets.so/game.jpg?id=${id}` helyére 'https://dev.me/products/image-placeholder'-t írok hiba keletkezik
+2.feladat
+semmi
+3.feladat
+A második kép után nem tud több képet betölteni
+4.feladat
+Hiba történt a kép betöltése során. szöveg helyett error-t ír
+5.feladat
+hibát ír ki
