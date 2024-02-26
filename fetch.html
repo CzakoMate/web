@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <script>
+      let i=1;
+      function Run(){
+        i=parseInt(document.getElementById("num").value);
+        if(i>30 || i<1)
+        {
+          console.log("Nincs ilyen id!");
+        }
+        {
+        
+      fetch('https://jsonplaceholder.org/users/?id='+i)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(user => {
+    console.log(user);
+    const divElement = document.getElementById("k1");
+  divElement.innerText = JSON.stringify(user, null, 2);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
+}
+    </script>
+</head>
+<body>
+    Adjon meg felhasználó id-t!
+    <input type="number" id="num" min="1" max="30" value="1">
+    <button onclick="Run()">Lekérés</button>
+    <div id="k1">
+
+    </div>
+</body>
+</html>
