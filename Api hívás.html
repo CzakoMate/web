@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api hívás</title>
+    <script>
+    function Run(){
+        i=document.getElementById("telnev").value;
+      fetch('https://hur.webmania.cc/zips/'+i+'.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Hálózati probléma!');
+    }
+    return response.json();
+  })
+  .then(obj => {
+    document.getElementById("k1").innerHTML="";
+    let telepulesek=obj.zips;
+    console.log(telepulesek);
+    const divElement = document.getElementById("k1");
+    if(telepulesek.length==0)
+    {
+      divElement.innerHTML="Nincs ilyen település!";
+    }
+    else{
+
+    
+    for(let telepules of telepulesek)
+    {
+      divElement.innerHTML+=`<li>${telepules.zip} ${telepules.name}</li>`
+    }
+  }
+  //divElement.innerText = JSON.stringify(telepulesek, null, 2);
+  })
+  .catch(error => {
+    console.error('Probléma volt a fetch művelettel', error);
+  });
+  
+}
+    </script>
+</head>
+<body>
+    Adjon meg település nevet!<br>
+    <input type="text" id="telnev" value="Békés">
+    <button onclick="Run()">Lekérés</button>
+    <div id="k1">
+
+    </div>
+
+</body>
+</html>
