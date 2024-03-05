@@ -1,0 +1,8 @@
+function gimme (triplet) {
+  const mas=[...triplet];
+  mas.sort(function(a,b){
+    return(a-b)
+  })
+  let kozepso=mas[1];
+  return triplet.indexOf(kozepso);
+}
