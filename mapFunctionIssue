@@ -1,0 +1,15 @@
+var func =function(item){
+    return item%2==0;
+}
+function map(arr, somefunction)
+{
+    if(typeof somefunction!="function"){return 'given argument is not a function';}
+    if(arr.filter(a=>isNaN(a)==true).length>0){return 'array should contain only numbers';}
+    
+    output=[];
+    for(let i=0;i<arr.length;i++)
+   {
+    output.push(somefunction(arr[i]))
+   }
+   return output;
+}
