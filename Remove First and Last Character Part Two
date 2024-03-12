@@ -1,0 +1,39 @@
+function array(string) {
+  // TODO
+  let arr=[];
+  let eredm="";
+  arr=string.split(",");
+  if(arr.length==0)
+    {
+      return null;
+    }
+  else if(arr.length==1)
+    {
+      return null;
+    }
+  else{
+    arr.pop();
+    if(arr.length==0)
+      {
+        return null;
+      }
+    else if(arr.length==1) {
+      return null
+    }
+    else{
+      arr.shift();
+  for(let i=0;i<arr.length;i++)
+    {
+      if(i==arr.length-1)
+        {
+          eredm+=arr[i]
+        }
+      else{
+        eredm+=arr[i]+" ";
+      }
+      
+    }
+  return eredm;
+    }
+    }
+}
