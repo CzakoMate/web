@@ -1,0 +1,14 @@
+function squareOrSquareRoot(array) {
+  let eredm=[];
+  for(let x of array)
+    {
+      if(Math.sqrt(x)%1===0)
+        {
+          eredm.push(Math.sqrt(x))
+        }
+      else{
+        eredm.push(x*x);
+      }
+    }
+  return eredm;
+}
