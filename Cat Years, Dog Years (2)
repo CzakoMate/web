@@ -1,0 +1,36 @@
+var ownedCatAndDog = function(catYears, dogYears) {
+  // Your code here!
+  let eredm=[];
+  if(catYears>=15&&catYears<24)
+    {
+      eredm[0]=1
+    }
+  else if(catYears==24&&catYears<28)
+    {
+      eredm[0]=2;
+    }
+  else if(catYears>24)
+    {
+      eredm[0]=Math.floor((catYears-24)/4)+2;
+    }
+  else{
+    eredm[0]=0;
+  }
+  
+     if(dogYears>=15&&dogYears<24)
+    {
+      eredm[1]=1
+    }
+  else if(dogYears==24&&dogYears<28)
+    {
+      eredm[1]=2;
+    }
+  else if(dogYears>24)
+    {
+      eredm[1]=Math.floor((dogYears-24)/5)+2;
+    }
+    else{
+    eredm[1]=0;
+  }
+ return eredm;
+}
