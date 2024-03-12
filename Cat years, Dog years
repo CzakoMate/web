@@ -1,0 +1,12 @@
+var humanYearsCatYearsDogYears = function(humanYears) {
+  // Your code here!
+  let eredm=[];
+  eredm[0]=humanYears;
+  switch(humanYears)
+    {
+        case 1:eredm[1]=15;eredm[2]=15;break;
+        case 2:eredm[1]=24;eredm[2]=24;break;
+        default: eredm[1]=24+(humanYears-2)*4;eredm[2]=24+(humanYears-2)*5;break;
+    }
+  return eredm;
+}
