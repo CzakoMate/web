@@ -1,0 +1,20 @@
+function repeats(arr){
+let eredm=[];
+let veg=0;
+let sorb=arr.sort();
+  for(let i=1;i<=arr.length;i++)
+    {
+      if(sorb[i-1]==sorb[i])
+        {
+          eredm.push(sorb[i]);
+        }
+    }
+  for(let i=0;i<arr.length;i++)
+    {
+      if(!(eredm.includes(arr[i])))
+        {
+          veg+=arr[i];
+        }
+    }
+  return veg;
+};
