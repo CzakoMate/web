@@ -1,0 +1,5 @@
+function gimmeTheLetters(sp) {
+  let abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  [start, end] = sp.split("-");
+  return abc.substring(abc.indexOf(start), abc.indexOf(end)+1);
+}
