@@ -1,0 +1,17 @@
+const arrCheck = value =>{
+  let counter=0;
+  for(let i=0;i<value.length;i++)
+    {
+      if(Array.isArray(value[i]))
+        {
+          counter++;
+        }
+    }
+  if(counter==value.length)
+    {
+      return true
+    }
+  else{
+    return false
+  }
+}
