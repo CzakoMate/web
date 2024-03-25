@@ -1,0 +1,17 @@
+var calc = function(a) {
+  const modifiedArray = a.map((element, index) => {
+  if (element > 0) {
+    element = element * element;
+  }
+  if ((index + 1) % 3 === 0) {
+    element = element * 3;
+  }
+  if ((index + 1) % 5 === 0) {
+    element = element * -1;
+  }
+  return element;
+});
+  let arr=modifiedArray;
+ const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  return sum;
+}
