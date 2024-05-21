@@ -164,3 +164,28 @@ async function HozzaAd(){
         console.log("Hiba történt: "+ error)
     }
   }
+
+  function kurzusok(){
+    document.getElementById("users").remove();
+    const dbz=document.createElement("div");
+    dbz.id="users";
+    document.getElementById("megj").appendChild(dbz);
+    const ulo=document.createElement("ul");
+    ulo.id="diak";
+    document.getElementById("users").appendChild(ulo);
+    for(let i=0;i<matrix.length;i++){
+        if(matrix[i][0]==EventTarget.class){
+            for(let j=0;j<matrix[i][2].length;j++){
+            const lio=document.createElement("li");
+            lio.textContent=matrix[i][2][j].name;
+            ulo.appendChild(lio);
+            }
+        }
+    }
+   
+    const btnb=document.createElement("button");
+    btnb.id="VisszG";
+    btnb.textContent="Vissza";
+    btnb.addEventListener("click", kiir());
+    document.getElementById("users").appendChild(btnb);
+}
