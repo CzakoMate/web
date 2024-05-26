@@ -1,0 +1,19 @@
+function middleMe(N, X, Y){
+  let out="";
+  function half(){
+      for(let i=0;i<N/2;i++)
+      {
+        out+=Y;
+      }
+    }
+  if(N%2!=0)
+    {
+      return X;
+    }
+  else{
+    half();
+    out+=X
+    half();
+    return out;
+  }
+}
