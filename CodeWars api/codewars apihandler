@@ -1,28 +1,35 @@
 function Futtat(){
     let ki="";
-let user=document.getElementById("beker").value;
+let user=document.getElementById("bekeres").value;
 const url = `https://www.codewars.com/api/v1/users/${user}`
   async function fetchData(url) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
+            
+        }
+        let ki = "";
+        if(response.status===404){
+            ki+="Nincs ilyen felhasználó!"
         }
         const data = await response.json();
         console.log(data);
-        console.log(data.ranks.languages)
-       //ki+=JSON.stringify(data.ranks.languages)
-       let ki = "";
+       ki +=data.username+"<br>";
+       let osszpont=0;
         for (let language in data.ranks.languages) {
             if (data.ranks.languages.hasOwnProperty(language)) {
+                osszpont+=Number(data.ranks.languages[language].score);
                 ki += ` ${language}, `;
                 ki += `Rank: ${data.ranks.languages[language].name}, `;
                 ki += `Score: ${data.ranks.languages[language].score}<br>`;
             }
         }
+        ki+=`Összpontszám: ${osszpont}`;
        document.getElementById("kimenet").innerHTML=ki;
     } catch (error) {
         console.error('Error fetching data:', error);
+        document.getElementById("kimenet").innerHTML="Nincs ilyen felhasználó!";
     }
 }
 
